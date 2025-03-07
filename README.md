@@ -2,12 +2,16 @@
 an ESP32 for interfacing a fingerprint reader and an intercom to put the data to Homeassistant
 
 
-abstract
-I use a nuki smart lock and a self build fingerprint reader circuit and controll them via an esp32 microcontroller and Homeassistant. The intercom system is integrated for using the buzzer and as an interrupt to wake the components (battery driven). The project uses esphome for connecting to my central Homeassistant instance. 
+[u]My ESP32-Fingerprint-Intercom-Project[/u]
+
+**Abstract**
+
+I use a nuki smart lock and a self build fingerprint reader circuit and controll them via an esp32 microcontroller and Homeassistant. The intercom system is integrated for using the buzzer and as an interrupt to wake the components (battery driven). The project uses ESPHome for connecting to my central Homeassistant instance. 
 This here should be a short description of the project, I'm thinking about providing a github repo for files and so on.
 
 
-Longer Story
+**Longer Story**
+
 Its about the interest and deployment of a Nuki Smart Lock Pro Gen4 that brought some more thinking into it. 
 I'm an engineer and so I always thinker and play around with stuff like computers, raspberry pis, esp32s and so on. One day my interest grow on the side of smart locks. As I'm a huge fan and frequent deployer of Homeassistant in friends and familys homes, the smart lock pro from nuki seemed nice cause of it's bride-less capabilities to smart home stations like Google, Apple or: HomeAssistant (HA)! 
 So, I ordered one. After recieving it and troubleshooting the mounting everything worked great with the Nuki App and with HA (via MQTT). But to always open the App (either way HA or Nuki) seems odd. You stand in front of your own door and need some moments to unlock it - even though I always have the key for the door in my pocket. First thing I tried was to do it via NFC. I had a NFC tag in the hallway that I could read with the back of my phone and so the door was unlocked (via a HA-Automation). Unfortunately Android phones do only read tags if they are unlocked (I think its a security feature) so I ended up unlocking my phone prior to reading the tag. It worked quite well but it was not convienient. 
@@ -19,7 +23,9 @@ After all that tinkering and 1 or 2 months of daily usage I decided to get rid o
 Two or three weeks later I had my newly designed pcb in hand, soldered the components, tinkered with some new errors and issues (PCB design and bad battery connectors) and packed it in a dry wall box with the battery. 
 Now my procedure has changed: I enter our main door and ring my own doorbell. After walking up one floor the esp is awake, connected to my wifi and ready to read my fingerprint, the nuki opens the door to me and my phone can stay in my jacket. But: I still have the key in my pocket!
 
-Entities involved
+
+**Entities involved**
+
 - Nuki Smart Lock Pro Gen4
 - R503 grow fingerprint reader
 - Siedle doorbell (6+n system) 
@@ -27,25 +33,33 @@ Entities involved
 - LiPo battery 3,7 V 4000mAh
 - Homeassistant running on a Pi5
 
-Schematics and PCB
-- picture 
-- picture
-- old assembly stripboard
-- new pcb
+**Schematics and PCB**
 
-Various impressions
-- picture r503 in case
-- 
+![2025-03-07_10-40-15|690x485, 75%](upload://z8Ohm2T3409Heyr7OO9CxSY2wQe.png)
+
+![2025-03-07_10-40-49|690x497, 75%](upload://uJw7t1tTndKb0ljsz8WypCIOGZc.png)
+
+![2025-03-07_10-43-43|690x497, 75%](upload://uMheDZFjtRpZ6vJ9UMx1l64OG4x.jpeg)
+
+![2025-03-07_10-45-50|426x500, 75%](upload://7YFVxrtkXjNMIozBaUNfCBBkaZf.jpeg)
 
 
-Help and ressources
+**Various impressions**
+
+![2025-03-07_10-46-51|657x500, 75%](upload://vBJT6NBVYfsP2Kb7GquidQ6XYP8.jpeg)
+
+![2025-03-07_10-56-09|264x500, 75%](upload://iXS56yFmp32N2G0bVXVbJ8GiFhx.jpeg)
+
+
+**Help and ressources**
+
 - ESP32-S3-Zero Waveshare
     https://www.waveshare.com/wiki/ESP32-S3-Zero
 - R503 ESPHome
     https://esphome.io/components/fingerprint_grow.html
 - 3d printed case for the reader
     https://www.thingiverse.com/thing:5419130/files
-- IObroker Siedle Doorbell - discussion around the Siedle intercom with some very helpful posts (in German)
+- ioBroker Siedle Doorbell - discussion around the Siedle intercom with some very helpful posts (in German)
     https://forum.iobroker.net/topic/7660/siedle-klingel-t%C3%BCr%C3%B6ffner-mit-esp8266-und-mqtt
 - easyeda - design circuits and pcbs online
     https://easyeda.com/
@@ -57,16 +71,20 @@ Help and ressources
     https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Fschematic-review-of-esp32-relay-board-v0-r95h7sixj8yc1.png%3Fwidth%3D2382%26format%3Dpng%26auto%3Dwebp%26s%3D9724f92cff9422d24422ecfdb0569f7d5bcf47b2
 
 
-homeassistant
+**Homeassistant**
+
 - ESPHome integrates the data from the fingerprint reader and from the intercom
 - the fuel gauge connected to the battery sends a battery charge percentage and a voltage to estimate the longevity 
 - automations in HA open the door via nuki or use the buzzer to enter the building
 
 
-improvements
-- lots of them!
+**improvements**
+
+- lots of them possible!
 - debug pins missing on the pcb
 - sometimes my doorbell recognized a ring but the ring of my neighbourgs was used - my circuit could be too sensitive on the doorbell lines
-- improve the wakeup speed -> homeassistant connection eg. via bluetooth, wifi can be slow to login, wifi 6 can be faster!? 
+- improve the wakeup speed -> homeassistant connection for example via bluetooth should be faster, wifi can be slow to login, wifi 6!? 
 - proximity wakeup or anything like this for the future 
 - use some power from the intercom system to charge the battery?
+
+I hope you enjoyed reading - start tinkering! 
