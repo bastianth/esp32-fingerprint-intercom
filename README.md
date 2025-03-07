@@ -43,7 +43,9 @@ But: I still have the key in my pocket!
 
 **Schematics and PCB**
 
-https://github.com/bastianth/esp32-fingerprint-intercom/blob/main/pictures/2025-03-07_10-40-15.png
+![Example Image](pictures/2025-03-07_10-40-15.png)
+
+
 
 ![2025-03-07_10-40-49|690x497, 75%](upload://uJw7t1tTndKb0ljsz8WypCIOGZc.png)
 
