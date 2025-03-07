@@ -44,25 +44,31 @@ But: I still have the key in my pocket!
 **Schematics and PCB**
 
 ![Schematics](pictures/2025-03-07_10-40-15.png)
+
 Schematics
 
 
 ![PCB](pictures/2025-03-07_10-40-49.png)
+
 PCB
 
 ![Stripboard](pictures/2025-03-07_10-43-43.png)
+
 Stripboard with LiPo battery
 
 ![PCB with components](pictures/2025-03-07_10-45-50.png)
+
 PCB with components soldered in and pcb connectors
 
 
 **Various impressions**
 
 ![Intercom and drywall box](pictures/2025-03-07_10-56-09.png)
+
 Siedle intercom and drywall box
 
 ![Doorbell and Fingerprint-Reader](pictures/2025-03-07_10-46-51.png)
+
 Doorbell and fingerprint reader 
 
 
